@@ -168,10 +168,10 @@ app.post('/post/employee', bodyParser.json(), (req, res) => {
 // apply for a leave
 
 
-app.post('/:id/application', bodyParser.json(), (req, res) => {
+app.post('/post/application', bodyParser.json(), (req, res) => {
   let { startDate, endDate, Reason, leaveType, leaveTotal, employee_id } = req.body;
 
-  const sqlQry = `INSERT INTO LeaveRequests (startDate, endDate, Reason, leaveType, leaveTotal,  employee_id)
+  const sqlQry = `INSERT INTO LeaveRequests (startDate, endDate, Reason, leaveType, leaveTotal, employee_id)
               VALUES ( ?, ?, ?, ?, ?, ?);`;
   db.query(sqlQry, [startDate, endDate, Reason, leaveType, leaveTotal,  employee_id], (err) => {
     if (err) {
