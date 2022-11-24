@@ -54,44 +54,6 @@ router.get("/employees", (req, res) => {
   }
 });
 
-// router.post("/post", (req, res) => {
-//   const employee = {
-//     firstName,
-//     lastName,
-//     email,
-//   };
-//   try {
-//     con.query(`INSERT INTO books SET ?`, employee, (err, result) => {
-//       if (err) throw err;
-//       res.send(result);
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(400).send(error);
-//   }
-// });
-
-// router.post("/post", (req, res) => {
-//   const LeaveRequests = {
-//     LeaveReq_no,
-//     startDate,
-//     endDate,
-//     leaveType,
-//     Reason,
-//     leaveTotal,
-//     employee_id
-//   };
-//   try {
-//     con.query(`INSERT INTO LeaveRequests SET ?`, employee, (err, result) => {
-//       if (err) throw err;
-//       res.send(result);
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(400).send(error);
-//   }
-// });
-// Leave request
 router.get("/LeaveRequests", (req, res) => {
   try {
     con.query("SELECT * FROM LeaveRequests", (err, result) => {
